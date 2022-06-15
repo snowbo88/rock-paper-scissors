@@ -5,13 +5,11 @@ function computerPlay() {
     const hands = ['rock', 'paper', 'scissors']
     const randomHandsIndex = Math.floor(Math.random() * 3);
     const computerSelection = hands[randomHandsIndex];
-    // console.log("Computer picks " + computerSelection);
     return computerSelection;
 }
 
 function playerSelection() {
     let playerSelection = window.prompt("What hand will you play?");
-    // console.log("You picked " + playerSelection.toLowerCase());
     return playerSelection.toLowerCase();
 }
 
