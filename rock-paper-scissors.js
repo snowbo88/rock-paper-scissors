@@ -1,4 +1,6 @@
-game();
+// game();
+// playerSelection();
+playRound();
 
 // computer selects a hand
 function computerPlay() {
@@ -9,12 +11,24 @@ function computerPlay() {
 }
 
 function playerSelection() {
-    let playerSelection = window.prompt("What hand will you play?");
-    return playerSelection.toLowerCase();
+    const playerSelections = document.querySelectorAll('button');
+    playerSelections.forEach((button) => {
+        button.addEventListener('click', () => {
+            playerSelection = button.id;
+
+            const result = document.querySelector('#results');
+            result.textContent = 'You picked ' + playerSelection;
+
+            console.log(playerSelection);
+            return playerSelection.toLowerCase();
+        })
+    })
 }
 
 // plays a round with a computer
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection()
+
     console.log("You: " + playerSelection + ", Computer: " + computerSelection)
 
     //You draw if
@@ -36,9 +50,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // plays five rounds with computer
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const computerSelection = computerPlay();
-        playRound(playerSelection(), computerSelection);
-    }
-}
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         const computerSelection = computerPlay();
+//         playRound(playerSelection(), computerSelection);
+//     }
+// }
