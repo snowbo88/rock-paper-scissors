@@ -8,8 +8,12 @@ playerSelections.forEach((button) => {
         computerSelection = computerPlay();
         playRound(playerSelection, computerSelection)
         keepScore();
-        displayResults(playerSelection, computerSelection, '#handShapes');
-        displayResults(playerScore, computerScore, '#score');
+
+        textContent("#computerSelection", computerSelection)
+        textContent("#computerScore", computerScore)
+        textContent("#playerSelection", playerSelection)
+        textContent("#playerScore", playerScore)
+
     })
 })
 
@@ -44,8 +48,6 @@ function playRound(playerSelection, computerSelection) {
         textContent("#round", "You lose this round!")
     }
 }
-
-
 
 function displayResults(playerSelection, computerSelection, selector) {
     const result = document.querySelector(selector);
@@ -84,10 +86,13 @@ function resetGame() {
         computerScore = 0;
         buttons.forEach((button) => button.disabled = false)
 
-        textContent("#result", "");
 
-        displayResults(playerSelection, computerSelection, '#handShapes');
-        displayResults(playerScore, computerScore, '#score');
+        textContent("#computerSelection", "")
+        textContent("#computerScore", "")
+        textContent("#playerSelection", "")
+        textContent("#playerScore", "")
+        textContent("#round", "");
+        textContent("#result", "");
 
         container.removeChild(resetButton)
     })
@@ -95,5 +100,5 @@ function resetGame() {
 
 function textContent(selector, text) {
     const element = document.querySelector(selector);
-    result.textContent = text;
+    element.textContent = text;
 }

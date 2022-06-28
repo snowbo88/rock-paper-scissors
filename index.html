@@ -9,19 +9,34 @@
 
 <body>
     <div id="container">
-        <p>What hand will you play?</p>
-        <button type="button" class="handShapes" id="rock">Rock</button>
-        <button type="button" class="handShapes" id="paper">Paper</button>
-        <button type="button" class="handShapes" id="scissors">Scissors</button>
 
-        <!-- To do: Split layout so it has player/computer split -->
-        <h1>Hand Shapes</h1>
-        <div id="handShapes"></div>
+        <div id="players">
+            <div id="player">
+                <h1>Player</h1>
+                <p>Selection: <span id="playerSelection"></span></p>
+                <p>Score: <span id="playerScore"></span></p>
+            </div>
 
-        <h1>Scores</h1>
-        <div id="score"></div>
-        <div id="round"></div>
-        <div id="result"></div>
+            <div id="computer">
+                <h1>Computer</h1>
+                <p>Selection: <span id="computerSelection"></span></p>
+                <p>Score: <span id="computerScore"></span></p>
+            </div>
+        </div>
+
+        <div id="hand">
+            <p>What hand will you play?</p>
+            <div>
+                <button type="button" class="handShapes" id="rock">Rock</button>
+                <button type="button" class="handShapes" id="paper">Paper</button>
+                <button type="button" class="handShapes" id="scissors">Scissors</button>
+            </div>
+        </div>
+
+        <div id="results">
+            <div id="round"> </div>
+            <div id="result"> </div>
+        </div>
 
         <script src="rock-paper-scissors.js"></script>
     </div>

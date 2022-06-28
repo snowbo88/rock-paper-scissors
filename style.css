@@ -1,9 +1,24 @@
-body {
+#container {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* div {
-    padding-top: 2em;
-} */
+
+#players {
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+}
+
+
+#players div {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#results {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
